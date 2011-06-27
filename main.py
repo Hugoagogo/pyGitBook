@@ -37,7 +37,10 @@ for r_commit in r_commits:
         commit.changed, commit.inserts, commit.deletes = re.search(changes,r_commit[1]).groups()
     else:
         commit.changed = commit.inserts = commit.deletes = "-"
-        
+    if hasattr(commit,"time"):
+        datet = datetime.datetime.fromtimestamp(int(commit.time))
+        commit.date = datet.strftime('%d-%m-%Y')
+        commit.time = datet.strftime('%I:%M:%S %p')
     commits.append(commit)
     
 template = ENV.get_template("main.html")

@@ -25,6 +25,11 @@ html
 {
   overflow-y:scroll;
 }
+
+#path {
+  font:19px helvetica,arial,freesans,clean,sans-serif;
+}
+
 #commit .group
 {
   border-top:1px solid #bedce7;
@@ -40,7 +45,7 @@ html
   border-bottom:1px solid #bedce7;
   border-left:1px solid #bedce7;
   border-right:1px solid #bedce7;
-  background:#eaf2f5 url(../../images/modules/commit/bg_gradient.gif) 0 100% 
+  background:#eaf2f5
 
 repeat-x;
   overflow:hidden;
@@ -67,7 +72,7 @@ repeat-x;
 {
   white-space:pre-wrap;
   word-wrap:break-word;
-  width:30em;
+  width:38em;
   font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans 
 
 Mono",monospace;
@@ -101,7 +106,7 @@ Mono",monospace;
 #commit .machine
 {
   float:right;
-  width:18em;
+  width:14em;
   border-left:1px solid #bedce7;
   color:gray;
   font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
@@ -112,9 +117,7 @@ Mono",monospace;
 
 #commit .commit_oneline
 {
-  background:#eaf2f5 url(../../images/modules/commit/bg_gradient.gif) 0 100% 
-
-repeat-x;
+  background:#eaf2f5;
 }
 
 #commit .commit_oneline td
