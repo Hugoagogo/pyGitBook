@@ -1,0 +1,199 @@
+[START commit][author=Hugoagogo][time=1309086064][message=Updated how to play][hash=efb90b7505a6385731cf47b6d590e1c8be306a86]
+ 1 files changed, 10 insertions(+), 5 deletions(-)
+
+[START commit][author=Hugoagogo][time=1309075467][message=Added dragging functionality that utalises existing code][hash=0639a229919ff1440893661f120e356aee0bf063]
+ 2 files changed, 18 insertions(+), 3 deletions(-)
+
+[START commit][author=Hugoagogo][time=1309063832][message=Fixed some bugs and tweaked some tiles][hash=cacfa7470c0037001d93f0666b92a4fc4814d993]
+ 6 files changed, 10 insertions(+), 3 deletions(-)
+
+[START commit][author=Hugoagogo][time=1309061755][message=Added basic swapping into fullscreen][hash=6eb193ea4ce7607061499ad23abf0149518950e8]
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308999339][message=Finished of fixing highscores so there is no dependancy on easygui][hash=a133054b1144c7c5e2437d6976a6c4442beeba7d]
+ 5 files changed, 50 insertions(+), 2402 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308996413][message=Added an editable menuitem][hash=84e0a05b7a02e67cb1281516c8b12ebbc53ffeb4]
+ 2 files changed, 84 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308802391][message=Added some doc strings][hash=46141b5c59632c365567b7dd7e4b56f070a2f1d2]
+ 1 files changed, 28 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308728310][message=Fixed highscore menu and removed some debug info, included easygui instead of needing an install][hash=ce8a8fe647aaa1e2407f3cdef47fe7cc14306861]
+ 2 files changed, 2390 insertions(+), 8 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308727953][message=Added check for valid highscore name][hash=c3b8378bb04ef25b4b0fdb35a7e182014854d013]
+ 1 files changed, 2 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308711365][message=Fixed up the recurring sound bug mostly][hash=4873d34740b4fe08551237924aa9f1f917c227b0]
+ 4 files changed, 23 insertions(+), 5 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308661006][message=Fixed up highscores a bit][hash=e6e5baaa187403e76056583af7245a94d8877755]
+ 5 files changed, 20 insertions(+), 36 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308656550][message=Fixed a bug in the game endstates, changed the tile distribution to make levels easier][hash=696711c011aa40e9edb0c48d93d287f59a6fca14]
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308656155][message=Fixed end condtions for time and zen mode.][hash=c2c8f5efca92329b832a4438f01dddc458075583]
+ 1 files changed, 11 insertions(+), 5 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308648734][message=Fixed up the new tiles a bit to look nicer and fixed a mistake in naming][hash=458901facbbf9437eba498c064b3096a327fdd79]
+ 22 files changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308181482][message=Tile that was left out? Also a shoddy icon included][hash=75a8dda7ddfec38bfe6db51f05dcf2dca136faf6]
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Hugoagogo][time=1308181355][message=IT WORKS WITH NO GAPS FINALLY][hash=97845b49a2a8d74ee7eaee9ef7178ca66c162563]
+ 1 files changed, 11 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1306369637][message=Added some new tiles][hash=34555749bbce2b0688684431fc653fc2a6091451]
+ 19 files changed, 13 insertions(+), 12 deletions(-)
+
+[START commit][author=Hugoagogo][time=1306313026][message=Fixed menu and how to play guide][hash=f51ddd2e1229ee7e767fe773274b4c1ca094ebe7]
+ 2 files changed, 43 insertions(+), 74 deletions(-)
+
+[START commit][author=Hugoagogo][time=1306284078][message=Finished of changes to the menu module, there are still some bugs to do with padding and margins][hash=477b6ba3d753fb7c054f857eb2459291c10fe8df]
+ 2 files changed, 116 insertions(+), 119 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305867456][message=More work on the menus module, buttons can now be clicked][hash=17bfec250198be10ea050cc7fe0474565487f9b3]
+ 1 files changed, 13 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305785137][message=Minor Tweaks to defaults and padding][hash=a7e75e4fac6d82d4be7a9a6cf70250b31939e0a5]
+ 1 files changed, 16 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305777761][message=Started reworking the menu system][hash=dcb2ccae6cec7ae48b5357d89b8f09f0063faff8]
+ 2 files changed, 249 insertions(+), 160 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305679216][message=Finaly got rid of artifacts from between files][hash=c82b37a99adec62c217ca806ffe6dab7e40d63e6]
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305624229][message=Changed sounds for picking up and placing][hash=e592e1c190af44865f12694fc1df9d7ccfcf0706]
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305200229][message=Added some sound effect, might need to be changed][hash=11a90b43dae052e6c5b17f22e989a3b480e64d38]
+ 7 files changed, 42 insertions(+), 0 deletions(-)
+
+[START commit][author=Hugoagogo][time=1305180164][message=Changed resource folder layout][hash=13d537723b41115e0d3c40a0543990d508a00be3]
+ 81 files changed, 693 insertions(+), 693 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302405933][message=Changed highscores.py because it was poorly implimented and used sqlite3][hash=c9e11bcf81fb8cd97f1104e4650cb13de75d2066]
+ 1 files changed, 23 insertions(+), 54 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302393758][message=Finished scoreboard with dates instead of playernames just in time][hash=c7377fdaf4f5f434ede90553e9ff12f29a14bfb0]
+ 1 files changed, 5 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302393125][message=Running out of time added highscores to the end of the game but still no names][hash=cb0fa19c167d6584890cc9bf0980fc5f65663564]
+ 2 files changed, 34 insertions(+), 12 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302391868][message=Changed some of the highscore layouts][hash=912e7e70485c5863ffadd486c8c19722b1fdde77]
+ 2 files changed, 130 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302390471][message=Added a basic highscore system][hash=ae771e5b43504c0c578e8356de158dbaf9ec6ec9]
+ 1 files changed, 46 insertions(+), 14 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302352624][message=More minor tweaks, for version 0.3][hash=9d9517b1dd84f3e9192b81ff8151b6ee3a7dd8c6]
+ 3 files changed, 9 insertions(+), 9 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302351547][message=Merged in some changes][hash=787c0a1f3f4f6bfe008ded2fea2419bb7dca1820]
+[START commit][author=Hugoagogo][time=1302351336][message=A few more tweaks ready for release 0.3][hash=55440216c04cd0252e3bf08e3d88b3274d4d4881]
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+[START commit][author=Rhys Powell][time=1302351107][message=Improved documentation.][hash=4e7f919a67e189e0ee31c559e5d4ffdfe2d1ca2d]
+ 3 files changed, 25 insertions(+), 9 deletions(-)
+
+[START commit][author=Rhys Powell][time=1302350462][message=Fixed how to play doc opening on OS X][hash=d5575a56730a5e20d139140971bebf13ec010e37]
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302349949][message=Updated the how to play][hash=a750f5858324e8f450d8768600ea27d31727f4e7]
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302349318][message=Merge branch 'master' of https://github.com/FrogBot/citySquare into FrogBot-master][hash=8fd4d3017ec157bba0c2e0dd26c5d0ccae8faf4a]
+[START commit][author=Hugoagogo][time=1302348989][message=Fixed up a bug with cities with an invalid tile on the left hand side, added some new tiles][hash=8ca9269ddb0c87dd2466472670b384ccbc41f9bf]
+ 4 files changed, 1 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302346223][message=Added an untimed ZenMode][hash=f84aa64db4d05929d64e3b10c5df02a0c0916df1]
+ 1 files changed, 73 insertions(+), 12 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302342452][message=Changed some of the menu structure and added a pause menu][hash=0b6d437bc1d1a328ba7930760419c35009364c77]
+ 1 files changed, 40 insertions(+), 12 deletions(-)
+
+[START commit][author=Rhys Powell][time=1302341432][message=Nicer 'how to play' document][hash=97fee68ff58b21558ff1c1f4d2545c3748ea3f94]
+ 1 files changed, 43 insertions(+), 12 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302335611][message=How to play should now open on mac/linux][hash=3a5bd22be5777875608cf92989b254df7236cc9b]
+ 1 files changed, 5 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302334508][message=Game will now end if you do better than the computers score][hash=b2d6ce785ed9db9fa5c66bb6e9a00001e91e73ea]
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302330627][message=Added a how to play guide and updated the README ready for release 0.2][hash=238704b428a82b5b44351e1c83c6a5602c2d7a5c]
+ 3 files changed, 17 insertions(+), 11 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302329276][message=Have forgotten to commit in a while lots of changes to lots of things, particularily menus and a breakup of your score at the end of the game][hash=b813386eb53eeb8c2a043c9b5942cbaf25d6c9ac]
+ 20 files changed, 575 insertions(+), 69 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302241202][message=Polished off some bugs and drawbacks after getting some people to play the game such as right-clicking to rotate as well as updateing after clicking.][hash=f0fa2b166f26cd1ff31b29f77340b85595bb69d5]
+ 1 files changed, 81 insertions(+), 23 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302232417][message=Did more work on the scoring bar and added a time bar nothing happens when you loose though][hash=3c7126dda7163d65c9f4a210646f82721b245df7]
+ 1 files changed, 100 insertions(+), 20 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302181299][message=Grid can now be moved and sized independantly of the window ready to add a score bar and a time bar][hash=520353dd511f7c3aad15538c153c046bf84ae372]
+ 1 files changed, 32 insertions(+), 18 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302178886][message=Improved folowing links more and polished of some more of the scoring system][hash=da37c951d54089344ff2b26f270b9d9fa687042e]
+ 1 files changed, 40 insertions(+), 35 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302169447][message=Got a few more bugs squashed and a the basis of a scoring system up and running][hash=391d47e4969536e4e65bd318c9e4cbb7b2cda8e5]
+ 1 files changed, 62 insertions(+), 8 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302156132][message=Works fully now :)][hash=5f7cd5197a20cbf4e02b08568fb11689736de0a4]
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302156101][message=works.... mostly, still][hash=7b5522d71459c5648cfc127669ebce2b9f1de91a]
+ 1 files changed, 51 insertions(+), 45 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302142885][message=Trying to write the algoritm for groups but its not really working, about to start again][hash=39ae209fef54f67227cf493ceb90a2aad7533abe]
+ 1 files changed, 54 insertions(+), 5 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302091126][message=Updated readme, also tiles are now switched when clicked on][hash=acaab51ce5486f17fa6ca959276aead3ffebfaad]
+ 2 files changed, 18 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302085038][message=Corrected typo causing crash][hash=09f7f6f977873e72d169c0fe3dbbde333e8b04b0]
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302077102][message=Added some comments and a readme, ready for release 0.1][hash=dcb8612846f59d4223b005262ce4166c24d77093]
+ 2 files changed, 29 insertions(+), 11 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302055807][message=Rixed a bunch of stuff now works with any size grid as well as not being drawn slightly off.][hash=86d43ef63642bcb0473c9f6d48effa811c287f20]
+ 1 files changed, 41 insertions(+), 26 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302007935][message=Dragging dropping and rotating has now been implimented][hash=59251792419485a3d15400ba1b9096ac2a000b52]
+ 1 files changed, 45 insertions(+), 1 deletions(-)
+
+[START commit][author=Hugoagogo][time=1302005661][message=Tiles are now weighted, can sit in the tray and can be clicked][hash=3fab4572e10255312388f68a40e2470640484751]
+ 35 files changed, 58 insertions(+), 109 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301996914][message=Solved it at last it now generates a full grid it was all due to the cycle function not working backwards][hash=169a2a788d6f57f6af0fcddf65b7b6556154978f]
+ 1 files changed, 199 insertions(+), 120 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301974356][message=Stuck, top 2 and right 2 rows dont calculate correctly as well as only one instance of each tile][hash=7cad4d6af439e34100f62c021e7bee227f8337f8]
+ 1 files changed, 49 insertions(+), 41 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301921312][message=Got it working but the grid isnt being displayed right][hash=fc7c733ee90cd9dd48e7d085c4e8e7fad4d19274]
+ 1 files changed, 19 insertions(+), 15 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301919383][message=Lots more progress but kind of stuck on generating a perfect city, i think the problem lies within the edges at function][hash=d22e6cef4a43f870ec7a5b04f9b6732e1c25acda]
+ 1 files changed, 100 insertions(+), 13 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301907507][message=Added much more functionality now squares can be dropped, if they are over the grid they will align themselves with it ect][hash=761adcc7564064ddded884209e4e49d96887865d]
+ 1 files changed, 78 insertions(+), 9 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301901113][message=Added a grid class to manage where tiles are placed as well as making Tile a subclass of pygame.sprite.Sprite][hash=c335e7d7c95529b77001378fa3403d1274d52d8f]
+ 1 files changed, 53 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301895846][message=Crushed some bugs, changed to the carcassone images from YORK][hash=84a37a938929b6298ef44ba0f9766a32db8abc8f]
+ 20 files changed, 360 insertions(+), 7 deletions(-)
+
+[START commit][author=Hugoagogo][time=1301892997][message=A basic framework for tiles and some functions to load them][hash=36b313ac9ea19c092e22a419ab4ad8302ae5c3ce]
+ 1 files changed, 38 insertions(+), 0 deletions(-)
