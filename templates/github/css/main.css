@@ -1,0 +1,307 @@
+html,body
+{
+  height:100%;
+  width:50em;
+  color:#000;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+body
+{
+  background-color:#FFF;
+  font:13.34px helvetica,arial,freesans,clean,sans-serif;
+  font-size:small;
+}
+body *
+{
+  line-height:1.4em;
+}
+pre,code
+{
+  font:12px 'Bitstream Vera Sans Mono',Courier,monospace;
+}
+html
+{
+  overflow-y:scroll;
+}
+#commit .group
+{
+  border-top:1px solid #bedce7;
+}
+
+#commit .separator
+{
+  padding-top:1em;
+}
+
+#commit .envelope
+{
+  border-bottom:1px solid #bedce7;
+  border-left:1px solid #bedce7;
+  border-right:1px solid #bedce7;
+  background:#eaf2f5 url(../../images/modules/commit/bg_gradient.gif) 0 100% 
+
+repeat-x;
+  overflow:hidden;
+  padding:0 .7em .7em;
+}
+
+#commit .envelope.selected
+{
+  background:#fffeeb!important;
+}
+
+#commit .human
+{
+  padding-top:.7em;
+  float:left;
+}
+
+#commit .human .refs
+{
+  font-size:150%;
+}
+
+#commit .human .message pre
+{
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  width:30em;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans 
+
+Mono",monospace;
+}
+
+#commit .human .actor
+{
+  clear:left;
+  margin-top:.75em;
+}
+
+#commit .merge
+{
+  padding-top:.7em;
+}
+
+#commit .merge .gravatar
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  margin-right:.5em;
+  padding:2px;
+}
+
+#commit .merge .message
+{
+  margin-top:.2em;
+}
+
+#commit .machine
+{
+  float:right;
+  width:18em;
+  border-left:1px solid #bedce7;
+  color:gray;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  font-size:.85em;
+  line-height:1.5em;
+  padding:.8em 0 .8em 1.2em;
+}
+
+#commit .commit_oneline
+{
+  background:#eaf2f5 url(../../images/modules/commit/bg_gradient.gif) 0 100% 
+
+repeat-x;
+}
+
+#commit .commit_oneline td
+{
+  border-bottom:1px solid #bedce7;
+}
+
+#commit .commit_oneline .date
+{
+  color:#888;
+  width:1%;
+  border-left:1px solid #bedce7;
+  padding:0 1em 0 .5em;
+}
+
+#commit .commit_oneline .author
+{
+  width:15%;
+}
+
+#commit .commit_oneline .gravatar img
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  margin-right:.4em;
+  padding:1px;
+}
+
+#commit .commit_oneline .message
+{
+  font-size:75%;
+}
+
+#commit .commit_oneline .commit,#commit .commit_oneline .tree
+{
+  width:1%;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans 
+
+Mono",monospace;
+  font-size:90%;
+  color:gray;
+  border-left:1px solid #bedce7;
+  padding:.6em .5em;
+}
+
+#commit .commit_oneline .tree
+{
+  border-right:1px solid #bedce7;
+}
+h2,h3,p,#readme.announce,#posts .entry-content p
+{
+  margin:1em 0;
+}
+#commit h2
+{
+  margin:0;
+}
+#commit
+{
+  font-weight:700;
+  color:#000;
+}
+.ejector h4,.fieldgroup p.explain,.fieldgroup div.error p,#impact_legend 
+
+p,#impact_graph p,.help-callout h2:first-child,.infotip p,.octotip p,#facebox 
+
+.popup .cheatsheet .col:last-child,.page-commit-show #gitnotes h2,#dashboard 
+
+ul.repo_list,table.uploads .description dl.form,.global-notice p,#inbox 
+
+p,#message .actions p,.composer dl.form,#issues_next #show_issue form.edit_issue 
+
+input[type="text"],.hero .textographic p,.screenographic .caption p,.caption 
+
+p,.following ul.avatars,.vcard dl dd,ul.smallnav,.browser .listing p,.pull-
+
+form,.new-comments .bubble .comment,.bubble .comment-
+
+form,ul.repositories,.rule.no-margin,.metabox p,.standard_form h2,#commit 
+
+h2,.news .alert p,#posts .entry-content p img,.ie7 #gollum-editor form
+{
+  margin:0;
+}
+
+.ejector.ejecting p,.commit-preview p.name a,.pull-description a,#footer 
+
+ul.sosueme li.main,#commit .commit_oneline .author a
+{
+  font-weight:700;
+  color:#000;
+}
+#code_search_results .results_and_sidebar,.baconplayer .wrap,#forkqueue 
+
+.topper,#help,#message .envelope .reply .controls,#issues_next #issues_list 
+
+.main .footerbar,#issues_next #show_issue #discussion_bucket,#repos .repo 
+
+.title,#commit,#dashboard .dossier .profile .identity,#dashboard .dossier 
+
+.profile .vcard .field,#guides .guide,#posts,.commentstyle form .actions
+{
+  overflow:hidden;
+}
+*,.options-group dl,.tree-browser.downloads td p,#rss p,#commit_comments 
+
+.inner,#wiki-wrapper #template h1,#wiki-wrapper #template h2,#wiki-wrapper 
+
+#template h3,#wiki-wrapper #template h4,#wiki-wrapper #template h5,#wiki-wrapper 
+
+#template h6
+{
+  margin:0;
+  padding:0;
+}
+#forkqueue table.compare td.spacer,#commit .commit_oneline .gravatar
+{
+  width:1%;
+}
+.manpage h5,.options-group dt label,.standard_form pre,.login_form 
+
+pre,.forgot_password_form pre,.oauth_form pre,#commit .human .message
+{
+  font-size:13px;
+}
+#inbox .list .item .gravatar,#repos .repo .commit .actor .gravatar,#commit 
+
+.human .actor .gravatar,.news .alert .gravatar
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  line-height:0;
+  margin-right:.7em;
+  padding:2px;
+}
+#issues_next #issues_list .main .pagination a,.pagehead.repohead h1 a,#repos 
+
+.repo .meta table td.url,#commit .human .message a.vis
+{
+  color:#4183c4;
+}
+#repos .repo .commit .actor .name,#commit .human .actor .name
+{
+  line-height:1.5em;
+}
+
+#repos .repo .commit .actor .name span,#commit .human .actor .name span
+{
+  color:#888;
+  font-size:90%;
+}
+
+#repos .repo .commit .actor .date,#commit .human .actor .date
+{
+  color:#888;
+  font-size:90%;
+  line-height:1em;
+}
+a,.profilecols ul.stats li a:hover strong,.profilecols ul.stats li a:hover span
+{
+  color:#4183c4;
+  text-decoration:none;
+}
+
+a:hover,#editbar .tab a:hover,#forkqueue table td.message a:hover,#inbox 
+
+.actions .compose p a span,#message .actions .compose p a span,td.linkable-
+
+line-number:hover,#files .file .view-modes ul.menu li:hover,.file-box .view-
+
+modes ul.menu li:hover
+{
+  text-decoration:underline;
+}
+*,.options-group dl,.tree-browser.downloads td p,#rss p,#commit_comments 
+
+.inner,#wiki-wrapper #template h1,#wiki-wrapper #template h2,#wiki-wrapper 
+
+#template h3,#wiki-wrapper #template h4,#wiki-wrapper #template h5,#wiki-wrapper 
+
+#template h6
+{
+  margin:0;
+  padding:0;
+}
+#commit .human .message a {
+color: black;
+}
