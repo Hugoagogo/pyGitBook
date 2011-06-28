@@ -1,0 +1,1778 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <style type="text/css">
+        html,body
+{
+  height:100%;
+  width:50em;
+  color:#000;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+body
+{
+  background-color:#FFF;
+  font:13.34px helvetica,arial,freesans,clean,sans-serif;
+  font-size:small;
+}
+body *
+{
+  line-height:1.4em;
+}
+pre,code
+{
+  font:12px 'Bitstream Vera Sans Mono',Courier,monospace;
+}
+html
+{
+  overflow-y:scroll;
+}
+
+#path {
+  font:40px helvetica,arial,freesans,clean,sans-serif;
+}
+
+#commit .group
+{
+  border-top:1px solid #bedce7;
+}
+
+#commit .separator
+{
+  padding-top:1em;
+}
+
+#commit .envelope
+{
+  border-bottom:1px solid #bedce7;
+  border-left:1px solid #bedce7;
+  border-right:1px solid #bedce7;
+  background:#eaf2f5
+
+repeat-x;
+  overflow:hidden;
+  padding:0 .7em .7em;
+}
+
+#commit .envelope.selected
+{
+  background:#fffeeb!important;
+}
+
+#commit .human
+{
+  padding-top:.7em;
+  float:left;
+}
+
+#commit .human .refs
+{
+  font-size:150%;
+}
+
+#commit .human .message pre
+{
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  width:38em;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans 
+
+Mono",monospace;
+}
+
+#commit .human .actor
+{
+  clear:left;
+  margin-top:.75em;
+}
+
+#commit .merge
+{
+  padding-top:.7em;
+}
+
+#commit .merge .gravatar
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  margin-right:.5em;
+  padding:2px;
+}
+
+#commit .merge .message
+{
+  margin-top:.2em;
+}
+
+#commit .machine
+{
+  float:right;
+  width:14em;
+  border-left:1px solid #bedce7;
+  color:gray;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  font-size:.85em;
+  line-height:1.5em;
+  padding:.8em 0 .8em 1.2em;
+}
+
+#commit .commit_oneline
+{
+  background:#eaf2f5;
+}
+
+#commit .commit_oneline td
+{
+  border-bottom:1px solid #bedce7;
+}
+
+#commit .commit_oneline .date
+{
+  color:#888;
+  width:1%;
+  border-left:1px solid #bedce7;
+  padding:0 1em 0 .5em;
+}
+
+#commit .commit_oneline .author
+{
+  width:15%;
+}
+
+#commit .commit_oneline .gravatar img
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  margin-right:.4em;
+  padding:1px;
+}
+
+#commit .commit_oneline .message
+{
+  font-size:75%;
+}
+
+#commit .commit_oneline .commit,#commit .commit_oneline .tree
+{
+  width:1%;
+  font-family:Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans 
+
+Mono",monospace;
+  font-size:90%;
+  color:gray;
+  border-left:1px solid #bedce7;
+  padding:.6em .5em;
+}
+
+#commit .commit_oneline .tree
+{
+  border-right:1px solid #bedce7;
+}
+h2,h3,p,#readme.announce,#posts .entry-content p
+{
+  margin:1em 0;
+}
+#commit h2
+{
+  margin:0;
+}
+#commit
+{
+  font-weight:700;
+  color:#000;
+}
+.ejector h4,.fieldgroup p.explain,.fieldgroup div.error p,#impact_legend 
+
+p,#impact_graph p,.help-callout h2:first-child,.infotip p,.octotip p,#facebox 
+
+.popup .cheatsheet .col:last-child,.page-commit-show #gitnotes h2,#dashboard 
+
+ul.repo_list,table.uploads .description dl.form,.global-notice p,#inbox 
+
+p,#message .actions p,.composer dl.form,#issues_next #show_issue form.edit_issue 
+
+input[type="text"],.hero .textographic p,.screenographic .caption p,.caption 
+
+p,.following ul.avatars,.vcard dl dd,ul.smallnav,.browser .listing p,.pull-
+
+form,.new-comments .bubble .comment,.bubble .comment-
+
+form,ul.repositories,.rule.no-margin,.metabox p,.standard_form h2,#commit 
+
+h2,.news .alert p,#posts .entry-content p img,.ie7 #gollum-editor form
+{
+  margin:0;
+}
+
+.ejector.ejecting p,.commit-preview p.name a,.pull-description a,#footer 
+
+ul.sosueme li.main,#commit .commit_oneline .author a
+{
+  font-weight:700;
+  color:#000;
+}
+#code_search_results .results_and_sidebar,.baconplayer .wrap,#forkqueue 
+
+.topper,#help,#message .envelope .reply .controls,#issues_next #issues_list 
+
+.main .footerbar,#issues_next #show_issue #discussion_bucket,#repos .repo 
+
+.title,#commit,#dashboard .dossier .profile .identity,#dashboard .dossier 
+
+.profile .vcard .field,#guides .guide,#posts,.commentstyle form .actions
+{
+  overflow:hidden;
+}
+*,.options-group dl,.tree-browser.downloads td p,#rss p,#commit_comments 
+
+.inner,#wiki-wrapper #template h1,#wiki-wrapper #template h2,#wiki-wrapper 
+
+#template h3,#wiki-wrapper #template h4,#wiki-wrapper #template h5,#wiki-wrapper 
+
+#template h6
+{
+  margin:0;
+  padding:0;
+}
+#forkqueue table.compare td.spacer,#commit .commit_oneline .gravatar
+{
+  width:1%;
+}
+.manpage h5,.options-group dt label,.standard_form pre,.login_form 
+
+pre,.forgot_password_form pre,.oauth_form pre,#commit .human .message
+{
+  font-size:13px;
+}
+#inbox .list .item .gravatar,#repos .repo .commit .actor .gravatar,#commit 
+
+.human .actor .gravatar,.news .alert .gravatar
+{
+  border:1px solid #d0d0d0;
+  background-color:#FFF;
+  float:left;
+  line-height:0;
+  margin-right:.7em;
+  padding:2px;
+}
+#issues_next #issues_list .main .pagination a,.pagehead.repohead h1 a,#repos 
+
+.repo .meta table td.url,#commit .human .message a.vis
+{
+  color:#4183c4;
+}
+#repos .repo .commit .actor .name,#commit .human .actor .name
+{
+  line-height:1.5em;
+}
+
+#repos .repo .commit .actor .name span,#commit .human .actor .name span
+{
+  color:#888;
+  font-size:90%;
+}
+
+#repos .repo .commit .actor .date,#commit .human .actor .date
+{
+  color:#888;
+  font-size:90%;
+  line-height:1em;
+}
+a,.profilecols ul.stats li a:hover strong,.profilecols ul.stats li a:hover span
+{
+  color:#4183c4;
+  text-decoration:none;
+}
+
+a:hover,#editbar .tab a:hover,#forkqueue table td.message a:hover,#inbox 
+
+.actions .compose p a span,#message .actions .compose p a span,td.linkable-
+
+line-number:hover,#files .file .view-modes ul.menu li:hover,.file-box .view-
+
+modes ul.menu li:hover
+{
+  text-decoration:underline;
+}
+*,.options-group dl,.tree-browser.downloads td p,#rss p,#commit_comments 
+
+.inner,#wiki-wrapper #template h1,#wiki-wrapper #template h2,#wiki-wrapper 
+
+#template h3,#wiki-wrapper #template h4,#wiki-wrapper #template h5,#wiki-wrapper 
+
+#template h6
+{
+  margin:0;
+  padding:0;
+}
+#commit .human .message a {
+color: black;
+}
+
+        </style>
+    </head>
+    <body>
+        
+        <div id="path">
+            <b><a href="#">This is a test title</a></b>
+        </div>
+        <div id="commit">
+            
+            
+                
+                <div class="separator">
+                    <h2>26-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Updated how to play</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:01:04 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">10</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">5</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added dragging functionality that utalises existing code</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>06:04:27 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">18</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">3</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed some bugs and tweaked some tiles</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:50:32 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">6</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">10</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">3</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added basic swapping into fullscreen</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:15:55 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">4</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">2</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>25-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Finished of fixing highscores so there is no dependancy on easygui</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>08:55:39 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">5</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">50</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">2402</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added an editable menuitem</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>08:06:53 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">84</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>23-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added some doc strings</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:13:11 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">28</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>22-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed highscore menu and removed some debug info, included easygui instead of needing an install</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>05:38:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">2390</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">8</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added check for valid highscore name</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>05:32:33 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">2</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed up the recurring sound bug mostly</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>12:56:05 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">4</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">23</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">5</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>21-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed up highscores a bit</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:56:46 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">5</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">20</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">36</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed a bug in the game endstates, changed the tile distribution to make levels easier</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:42:30 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">2</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">2</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed end condtions for time and zen mode.</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:35:55 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">11</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">5</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed up the new tiles a bit to look nicer and fixed a mistake in naming</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>07:32:14 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">22</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">0</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>16-06-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Tile that was left out? Also a shoddy icon included</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:44:42 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">0</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">IT WORKS WITH NO GAPS FINALLY</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:42:35 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">11</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>26-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added some new tiles</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:27:17 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">19</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">13</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">12</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>25-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed menu and how to play guide</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>06:43:46 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">43</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">74</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Finished of changes to the menu module, there are still some bugs to do with padding and margins</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:41:18 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">116</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">119</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>20-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">More work on the menus module, buttons can now be clicked</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:57:36 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">13</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>19-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Minor Tweaks to defaults and padding</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:05:37 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">16</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Started reworking the menu system</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:02:41 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">249</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">160</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>18-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Finaly got rid of artifacts from between files</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:40:16 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">2</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>17-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Changed sounds for picking up and placing</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>07:23:49 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">0</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>12-05-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added some sound effect, might need to be changed</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:37:09 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">7</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">42</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Changed resource folder layout</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:02:44 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">81</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">693</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">693</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>10-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Changed highscores.py because it was poorly implimented and used sqlite3</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>01:25:33 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">23</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">54</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Finished scoreboard with dates instead of playernames just in time</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:02:38 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">5</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Running out of time added highscores to the end of the game but still no names</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:52:05 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">34</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">12</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Changed some of the highscore layouts</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:31:08 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">130</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added a basic highscore system</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:07:51 AM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">46</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">14</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>09-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">More minor tweaks, for version 0.3</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:37:04 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">3</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">9</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">9</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Merged in some changes</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:19:07 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">-</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">-</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">-</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">A few more tweaks ready for release 0.3</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:15:36 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">6</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">2</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Improved documentation.</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Rhys Powell</a> - <span>10:11:47 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">3</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">25</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">9</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed how to play doc opening on OS X</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Rhys Powell</a> - <span>10:01:02 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">1</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Updated the how to play</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:52:29 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">2</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">2</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Merge branch 'master' of https://github.com/FrogBot/citySquare into FrogBot-master</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:41:58 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">-</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">-</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">-</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Fixed up a bug with cities with an invalid tile on the left hand side, added some new tiles</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:36:29 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">4</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">1</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added an untimed ZenMode</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>08:50:23 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">73</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">12</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Changed some of the menu structure and added a pause menu</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>07:47:32 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">40</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">12</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Nicer 'how to play' document</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Rhys Powell</a> - <span>07:30:32 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">43</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">12</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">How to play should now open on mac/linux</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>05:53:31 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">5</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Game will now end if you do better than the computers score</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>05:35:08 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">1</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added a how to play guide and updated the README ready for release 0.2</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:30:27 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">3</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">17</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">11</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Have forgotten to commit in a while lots of changes to lots of things, particularily menus and a breakup of your score at the end of the game</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:07:56 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">20</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">575</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">69</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>08-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Polished off some bugs and drawbacks after getting some people to play the game such as right-clicking to rotate as well as updateing after clicking.</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>03:40:02 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">81</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">23</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Did more work on the scoring bar and added a time bar nothing happens when you loose though</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>01:13:37 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">100</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">20</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>07-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Grid can now be moved and sized independantly of the window ready to add a score bar and a time bar</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>11:01:39 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">32</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">18</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Improved folowing links more and polished of some more of the scoring system</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:21:26 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">40</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">35</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Got a few more bugs squashed and a the basis of a scoring system up and running</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>07:44:07 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">62</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">8</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Works fully now :)</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:02:12 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">6</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">6</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">works.... mostly, still</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>04:01:41 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">51</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">45</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Trying to write the algoritm for groups but its not really working, about to start again</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>12:21:25 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">54</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">5</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>06-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Updated readme, also tiles are now switched when clicked on</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>09:58:46 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">18</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Corrected typo causing crash</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>08:17:18 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">1</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added some comments and a readme, ready for release 0.1</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>06:05:02 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">2</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">29</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">11</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Rixed a bunch of stuff now works with any size grid as well as not being drawn slightly off.</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>12:10:07 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">41</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">26</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>05-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Dragging dropping and rotating has now been implimented</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:52:15 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">45</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">1</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Tiles are now weighted, can sit in the tray and can be clicked</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:14:21 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">35</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">58</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">109</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Solved it at last it now generates a full grid it was all due to the cycle function not working backwards</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>07:48:34 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">199</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">120</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Stuck, top 2 and right 2 rows dont calculate correctly as well as only one instance of each tile</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>01:32:36 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">49</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">41</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                
+                    </div>
+                
+                <div class="separator">
+                    <h2>04-04-2011 </h2>
+                </div>
+                <div class="group">
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Got it working but the grid isnt being displayed right</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:48:32 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">19</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">15</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Lots more progress but kind of stuck on generating a perfect city, i think the problem lies within the edges at function</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>10:16:23 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">100</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">13</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added much more functionality now squares can be dropped, if they are over the grid they will align themselves with it ect</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>06:58:27 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">78</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">9</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Added a grid class to manage where tiles are placed as well as making Tile a subclass of pygame.sprite.Sprite</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>05:11:53 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">53</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">Crushed some bugs, changed to the carcassone images from YORK</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>03:44:06 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">20</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">360</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">7</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+            
+                <div class="envelope commit">
+                    <div class="human">
+                        <div class="message"><pre><a href="#">A basic framework for tiles and some functions to load them</a> </pre></div>
+                        <div class="actor">
+                            <div class="name"></span><a href="/Hugoagogo">Hugoagogo</a> - <span>02:56:37 PM</div>
+                        </div>
+                    </div>
+                    <div class="machine">
+                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">1</a><br>
+                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">38</a><br>
+                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">0</a>
+                    </div>
+                </div>
+                
+                
+            
+            
+        
+        </div>
+        </div>
+    </body>
+</html>
