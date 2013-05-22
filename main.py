@@ -49,7 +49,7 @@ for r_commit in r_commits:
     
 template = ENV.get_template("main.html")
 
-data = {"title":RepoName,
+data = {"title":HEADING,
         "style":get_css(TEMPLATE_DIR),
         "commits":commits}
 
