@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # Use this is generate log data for the default template
 #git log --pretty="format:[START commit][author=%an][time=%at][message=%s][hash=%H]" --shortstat > git-data.txt
 
@@ -12,7 +13,7 @@ TEMPLATE_DIR = os.path.join(os.path.abspath('templates'),"github")
 ENV = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
 data = re.compile(r"\[(\w+=.*?)\]")
-changes = re.compile(r"(\d+) files changed, (\d+) insertions[(][+][)], (\d+) deletions")
+changes = re.compile(r"(\d+) files? changed(?:, (\d+) insertions?[(][+][)])?(?:, (\d+) deletions?)?")
 
 class Commit(object):pass ## Just a blank object
 
@@ -48,7 +49,7 @@ for r_commit in r_commits:
     
 template = ENV.get_template("main.html")
 
-data = {"title":RepoName,
+data = {"title":HEADING,
         "style":get_css(TEMPLATE_DIR),
         "commits":commits}
 
