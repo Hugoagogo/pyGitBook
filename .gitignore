@@ -1,0 +1,5 @@
+env
+__pycache__
+*.pyc
+git-data.txt
+gitBook.html
