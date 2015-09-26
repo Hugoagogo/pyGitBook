@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+#-*- coding: utf-8 -*-
 # Use this is generate log data for the default template
 #git log --pretty="format:[START commit][author=%an][time=%at][message=%s][hash=%H]" --shortstat > git-data.txt
 
@@ -53,8 +54,8 @@ data = {"title":HEADING,
         "style":get_css(TEMPLATE_DIR),
         "commits":commits}
 
-f = open(HTMLFILE,"w")
+f = open(HTMLFILE,"w", encoding="utf-8")
 f.write(template.render(data))
 f.close()
 
-print "All done you now have a nice logbook at:", HTMLFILE
+print ("All done you now have a nice logbook at:", HTMLFILE)
