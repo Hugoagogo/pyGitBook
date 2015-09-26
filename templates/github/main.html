@@ -1,45 +1,44 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-    <head>
-        <style type="text/css">
-        {{ style }}
-        </style>
-    </head>
-    <body>
-        {% set last_date=0%}
-        <div id="path">
-            <b><a href="#">{{ title }}</a></b>
+  <head>
+    <style type="text/css">
+      {{ style }}
+      </style>
+  </head>
+  <body>
+    {% set last_date=0 %}
+    <div id="path">
+      <b><a href="#">{{ title }}</a></b>
+    </div>
+    <div id="commit">
+      {% for commit in commits %}
+        {% if commit.date != last_date %}
+          {% if last_date != 0 %}
+              </div>
+          {% endif %}
+          <div class="separator">
+            <h2>{{ commit.date }}</h2>
+          </div>
+          <div class="group">
+        {% endif %}
+          <div class="envelope commit">
+            <div class="human">
+              <div class="message">
+                <pre><a>{{ commit.message }}</a></pre>
+              </div>
+              <div class="actor">
+                  <div class="name"></span><a href="#{{ commit.author }}">{{ commit.author }}</a> - <span>{{ commit.time }}</div>
+              </div>
+            </div>
+            <div class="machine">
+              Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">{{ commit.changed }}</a><br>
+              Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">{{ commit.inserts }}</a><br>
+              Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">{{ commit.deletes }}</a>
+            </div>
         </div>
-        <div id="commit">
-            {% for commit in commits %}
-            {% if commit.date != last_date%}
-                {% if last_date != 0 %}
-                    </div>
-                {% endif %}
-                <div class="separator">
-                    <h2>{{ commit.date }} </h2>
-                </div>
-                <div class="group">
-            {% endif %}
-                <div class="envelope commit">
-                    <div class="human">
-                        <div class="message"><pre><a href="#">{{ commit.message }}</a> </pre></div>
-                        <div class="actor">
-                            <div class="name"></span><a href="/Hugoagogo">{{ commit.author }}</a> - <span>{{ commit.time }}</div>
-                        </div>
-                    </div>
-                    <div class="machine">
-                        Files Modified&nbsp;&nbsp;<a href="#" class="js-commit-link" data-key="c">{{ commit.changed }}</a><br>
-                        Lines Added&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="js-tree-link" data-key="t">{{ commit.inserts }}</a><br>
-                        Lines Removed&nbsp;&nbsp;&nbsp;<a href="#" class="js-parent-link" data-key="p">{{ commit.deletes }}</a>
-                    </div>
-                </div>
-                
-                
-            
-            {% set last_date=commit.date %}
-        {% endfor %}
-        </div>
-        </div>
-    </body>
+      {% set last_date=commit.date %}
+    {% endfor %}
+    </div>
+    </div>
+  </body>
 </html>
