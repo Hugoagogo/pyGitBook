@@ -32,7 +32,7 @@ TEMPLATE_DIR = os.path.join(os.path.abspath('templates'), 'github')
 
 ENV = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
 
-data = re.compile(r'\[(\w+=.*?)\]')
+data = re.compile(r'\[(\w+=.*?)\](?=$|\[)')
 changes = re.compile(r'(\d+) files? changed(?:, (\d+) insertions?[(][+][)])?(?:, (\d+) deletions?)?')
 
 
